@@ -16,66 +16,92 @@ To write a program to predict the marks scored by a student using the simple lin
 ## Program:
 ### P PARTHIBAN
 ### 212223230145
-```py
-import pandas as pd
 import numpy as np
+import pandas as pd
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 import matplotlib.pyplot as plt
-from sklearn.metrics import mean_absolute_error,mean_squared_error
-df=pd.read_csv('student_scores.csv')
-print(df)
-df.head(0)
-df.tail(0)
-print(df.head())
-print(df.tail())
-x = df.iloc[:,:-1].values
-print(x)
-y = df.iloc[:,1].values
-print(y)
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=1/3,random_state=0)
 from sklearn.linear_model import LinearRegression
-regressor = LinearRegression()
-regressor.fit(x_train,y_train)
-y_pred = regressor.predict(x_test)
-print(y_pred)
-print(y_test)
-#Graph plot for training data
-plt.scatter(x_train,y_train,color='black')
-plt.plot(x_train,regressor.predict(x_train),color='blue')
-plt.title("Hours vs Scores(Training set)")
+
+df = pd.read_csv("student_scores.csv")
+
+print(df.tail())
+print(df.head())
+df.info()
+
+x = df.iloc[:, :-1].values  # Hours
+y = df.iloc[:,:-1].values   # Scores
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=1/3, random_state=0)
+
+print("X_Training:", x_train)
+print("X_Test:", x_test)
+print("Y_Training:", y_train)
+print("Y_Test:", y_test)
+
+reg = LinearRegression()
+reg.fit(x_train, y_train)
+
+Y_pred = reg.predict(x_test)
+
+print("Predicted Scores:", Y_pred)
+print("Actual Scores:", y_test)
+
+a = Y_pred - y_test
+print("Difference (Predicted - Actual):", a)
+
+plt.scatter(x_train, y_train, color="green")
+plt.plot(x_train, reg.predict(x_train), color="red")
+plt.title('Training set (Hours vs Scores)')
 plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
-#Graph plot for test data
-plt.scatter(x_test,y_test,color='black')
-plt.plot(x_train,regressor.predict(x_train),color='red')
-plt.title("Hours vs Scores(Testing set)")
+
+plt.scatter(x_test, y_test, color="blue")
+plt.plot(x_test, reg.predict(x_test), color="green")
+plt.title('Testing set (Hours vs Scores)')
 plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
-mse=mean_absolute_error(y_test,y_pred)
-print('MSE = ',mse)
-mae=mean_absolute_error(y_test,y_pred)
-print('MAE = ',mae)
-rmse=np.sqrt(mse)
-print("RMSE= ",rmse)
+
+mae = mean_absolute_error(y_test, Y_pred)
+mse = mean_squared_error(y_test, Y_pred)
+rmse = np.sqrt(mse)
+
+print("Mean Absolute Error:", mae)
+print("Mean Squared Error:", mse)
+print("Root Mean Squared Error:", rmse)
 ```
+
 ## Output:
-### Dataset
-![output](./images/dataset.png)
-### Head Values
-![output](./images/head.png)
-### Tail Values
-![output](./images/tail.png)
-### X and Y values
-![output](./images/xyvalues.png)
-### Predication values of X and Y
-![output](./images/predict%20.png)
-### MSE,MAE and RMSE
-![output](./images/values.png)
-### Training Set
-![output](./images/train.png)
-### Testing Set
-![output](./images/test.png)
+### head():
+[Screenshot 2024-08-20 222944](https://github.com/user-attachments/assets/9de86369-938b-4030-a048-808337d517d4)
+### tail():
+[Screenshot 2024-08-20 223023](https://github.com/user-attachments/assets/6a1861ee-dac9-408d-9f7a-faef16902dbd)
+## TRAINING SET INPUT
+### X_Training:
+[Screenshot 2024-08-20 221625](https://github.com/user-attachments/assets/5b02582c-73c3-40e7-bca7-b53d44566ded)
+### Y_Training:
+[Screenshot 2024-08-20 221927](https://github.com/user-attachments/assets/3b8a3dc9-a4c3-4c62-879e-fe9f1420eba7)
+## TEST SET VALUE
+### X_Test:
+[Screenshot 2024-08-20 222124](https://github.com/user-attachments/assets/5b112037-841a-48c7-a45f-8529261351df)
+### Y_Test:
+[Screenshot 2024-08-20 222224](https://github.com/user-attachments/assets/e5de4423-c71a-434b-a8b3-32d5c317d78d)
+### TRAINING SET:
+[Screenshot 2024-08-20 222458](https://github.com/user-attachments/assets/c550b4a3-7bc4-4365-ad61-03aa1fd3e53a)
+### TEST SET:
+[Screenshot 2024-08-20 222547](https://github.com/user-attachments/assets/68d8ecf9-f140-4677-a7f9-9b6609da5987)
+### MEAN SQUARE ERROR, MEAN ABSOLUTE ERROR AND RMSE:
+[Screenshot 2024-08-20 222716](https://github.com/user-attachments/assets/2ecaced7-c4b7-448a-ab1a-126978202f4f)
+
+
+
+
+
+
+
+
+
 ## Result:
 Thus the program to implement the simple linear regression model for predicting the marks scored is written and verified using python programming.
