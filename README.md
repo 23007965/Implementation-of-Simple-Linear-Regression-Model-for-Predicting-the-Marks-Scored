@@ -16,6 +16,7 @@ To write a program to predict the marks scored by a student using the simple lin
 ## Program:
 ### P PARTHIBAN
 ### 212223230145
+```
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, mean_squared_error
