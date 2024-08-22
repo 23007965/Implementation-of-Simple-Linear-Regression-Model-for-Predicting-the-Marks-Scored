@@ -13,7 +13,9 @@ To write a program to predict the marks scored by a student using the simple lin
 #### 4.Assign the points for representing in the graph. 
 #### 5.Predict the regression for marks by using the representation of the graph. 
 #### 6.Compare the graphs and hence we obtained the linear regression for the given datas.
+
 ## Program:
+
 ### P PARTHIBAN
 ### 212223230145
 ```
@@ -76,31 +78,34 @@ print("Root Mean Squared Error:", rmse)
 
 ## Output:
 ### head():
-[Screenshot 2024-08-20 222944](https://github.com/user-attachments/assets/9de86369-938b-4030-a048-808337d517d4)
+![image](https://github.com/user-attachments/assets/b81ff787-f053-41e4-bfcb-2db1ec6f6875)
+
 ### tail():
-[Screenshot 2024-08-20 223023](https://github.com/user-attachments/assets/6a1861ee-dac9-408d-9f7a-faef16902dbd)
+![image](https://github.com/user-attachments/assets/21029500-22d8-4848-b8d5-ab5b3e740dca)
+
 ## TRAINING SET INPUT
 ### X_Training:
-[Screenshot 2024-08-20 221625](https://github.com/user-attachments/assets/5b02582c-73c3-40e7-bca7-b53d44566ded)
+![image](https://github.com/user-attachments/assets/bc9fe391-f491-4dfb-8874-f3f4235c1c65)
+
 ### Y_Training:
-[Screenshot 2024-08-20 221927](https://github.com/user-attachments/assets/3b8a3dc9-a4c3-4c62-879e-fe9f1420eba7)
+![image](https://github.com/user-attachments/assets/348305d5-b7cb-42cb-808e-5a8dd533df5e)
+
 ## TEST SET VALUE
 ### X_Test:
-[Screenshot 2024-08-20 222124](https://github.com/user-attachments/assets/5b112037-841a-48c7-a45f-8529261351df)
+![image](https://github.com/user-attachments/assets/8f0f9121-22b4-4e0d-8f9c-193fe427f647)
+
 ### Y_Test:
-[Screenshot 2024-08-20 222224](https://github.com/user-attachments/assets/e5de4423-c71a-434b-a8b3-32d5c317d78d)
-### TRAINING SET:
-[Screenshot 2024-08-20 222458](https://github.com/user-attachments/assets/c550b4a3-7bc4-4365-ad61-03aa1fd3e53a)
+![image](https://github.com/user-attachments/assets/65ac43d6-870e-4095-81e1-bc1afe7f7cc1)
+
+## TRAINING SET:
+![image](https://github.com/user-attachments/assets/bd377bd1-b2f6-4bbd-9d47-9cbd7e0c290c)
+
+
 ### TEST SET:
-[Screenshot 2024-08-20 222547](https://github.com/user-attachments/assets/68d8ecf9-f140-4677-a7f9-9b6609da5987)
+![image](https://github.com/user-attachments/assets/b1e3213a-2cc7-4e30-add5-9df89fe5c10c)
+
 ### MEAN SQUARE ERROR, MEAN ABSOLUTE ERROR AND RMSE:
-[Screenshot 2024-08-20 222716](https://github.com/user-attachments/assets/2ecaced7-c4b7-448a-ab1a-126978202f4f)
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/1ebdbc49-3515-48c3-951f-8c662ebfa198)
 
 
 
